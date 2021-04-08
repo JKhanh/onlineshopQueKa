@@ -13,9 +13,12 @@ def authenticate(request):
     return render(request, 'login.html')
 
 
-def verifyAuth(request, email, password):
-    if email == 'thayQueDepTrai' and password == '123':
-        render(request, 'index.html')
-    else:
-        render(request, 'login.html')
+def user_login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        if email == 'thayQueDepTrai' and password == '123':
+            return render(template_name='index.html', request=request)
+        else:
+            return render(template_name='login.html', request=request  )
 

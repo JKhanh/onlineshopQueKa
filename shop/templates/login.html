@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-6 mb-5">
 
-                    <form action="{% url 'verify' email password %}" method="post">
+                    <form action="{% url 'verify' %}" method="post"> {% csrf_token %}
                         <div class="row px-3">
                             <label class="mb-1 mt-5">
                                 <h6 class="mb-0 text-sm">Tên đăng nhập</h6>
